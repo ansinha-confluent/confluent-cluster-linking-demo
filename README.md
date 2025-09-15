@@ -15,6 +15,7 @@ A complete automation script for setting up two Confluent Platform 8.0+ clusters
 ## 📋 Prerequisites
 
 - macOS (tested on macOS with zsh)
+- RHEL Ent some times defaults to a different shell so as long as you run bash it should ideally work.
 - Internet connection (to download Confluent Platform)
 - Ports available: 9092-9095, 8081-8086, 8090-8091
 - At least 4GB free disk space
