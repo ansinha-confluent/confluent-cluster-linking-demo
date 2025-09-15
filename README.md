@@ -26,8 +26,8 @@ A complete automation script for setting up two Confluent Platform 8.0+ clusters
 ```
 ┌─────────────────┐                    ┌─────────────────┐
 │      CP1        │◄──────────────────►│      CP2        │
-│   (Source)      │   Bidirectional    │ (Destination)   │
-│                 │   Cluster Link     │                 │
+│   (Source)      │   2 Cluster Link   │ (Destination)   │
+│                 │                    │                 │
 │ Kafka: 9092     │                    │ Kafka: 9094     │
 │ Schema: 8081    │                    │ Schema: 8083    │
 │ REST: 8082      │                    │ REST: 8084      │
