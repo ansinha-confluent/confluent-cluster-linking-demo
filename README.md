@@ -72,6 +72,8 @@ echo 'Hello from CP2' | ~/cp2/confluent-8.0.0/bin/kafka-console-producer \
   --from-beginning --max-messages 1
 ```
 
+If it shows issues in one of the cluster links just wait for a bit and rerun it it takes a little bit of time (~10 mins) for it become live then everything works fine.
+
 ### 3. Management Commands
 
 ```bash
@@ -219,5 +221,3 @@ For issues related to:
 - **Cluster Linking**: See [Cluster Linking Guide](https://docs.confluent.io/platform/current/multi-dc-deployments/cluster-linking/index.html)
 
 ---
-
-**Happy Cluster Linking!** 🎉
