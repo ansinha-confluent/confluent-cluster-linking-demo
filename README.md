@@ -15,7 +15,6 @@ A complete automation script for setting up two Confluent Platform 8.0+ clusters
 ## 📋 Prerequisites
 
 - macOS (tested on macOS with zsh)
-- RHEL Ent some times defaults to a different shell so as long as you run bash it should ideally work.
 - Internet connection (to download Confluent Platform)
 - Ports available: 9092-9095, 8081-8086, 8090-8091
 - At least 4GB free disk space
@@ -26,8 +25,8 @@ A complete automation script for setting up two Confluent Platform 8.0+ clusters
 ```
 ┌─────────────────┐                    ┌─────────────────┐
 │      CP1        │◄──────────────────►│      CP2        │
-│   (Source)      │   2 Cluster Link   │ (Destination)   │
-│                 │                    │                 │
+│   (Source)      │   Bidirectional    │ (Destination)   │
+│                 │   Cluster Link     │                 │
 │ Kafka: 9092     │                    │ Kafka: 9094     │
 │ Schema: 8081    │                    │ Schema: 8083    │
 │ REST: 8082      │                    │ REST: 8084      │
@@ -72,8 +71,6 @@ echo 'Hello from CP2' | ~/cp2/confluent-8.0.0/bin/kafka-console-producer \
   --bootstrap-server localhost:9092 --topic test-reverse \
   --from-beginning --max-messages 1
 ```
-
-If it shows issues in one of the cluster links just wait for a bit and rerun it it takes a little bit of time (~10 mins) for it become live then everything works fine.
 
 ### 3. Management Commands
 
@@ -134,7 +131,7 @@ confluent-cluster-linking-demo/
 
 - **Forward Link**: `cp1-to-cp2` (on CP2, mirrors from CP1)
 - **Reverse Link**: `cp2-to-cp1` (on CP1, mirrors from CP2)
-- **Mode**: `DESTINATION` with `OUTBOUND` connection
+- **Mode**: `SOURCE` with `OUTBOUND` connection
 
 ## 🛠️ Advanced Usage
 
@@ -222,3 +219,5 @@ For issues related to:
 - **Cluster Linking**: See [Cluster Linking Guide](https://docs.confluent.io/platform/current/multi-dc-deployments/cluster-linking/index.html)
 
 ---
+
+**Happy Cluster Linking!** 🎉
